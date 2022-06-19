@@ -41,7 +41,7 @@
                      <children>
                         <TreeTableView prefHeight="481.0" prefWidth="702.0">
                           <columns>
-                            <TreeTableColumn prefWidth="92.0" text="%summarytab..date" />
+                            <TreeTableColumn prefWidth="92.0" text="%summarytab.date" />
                             <TreeTableColumn minWidth="0.0" prefWidth="96.0" text="%summarytab.partyname" />
                               <TreeTableColumn prefWidth="90.0" text="%summarytab.startingtime" />
                               <TreeTableColumn prefWidth="111.0" text="%summarytab.category" />
