@@ -1,5 +1,6 @@
 package com.registry.partyregistry.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
 public class RegistryController {
@@ -11,4 +12,16 @@ public class RegistryController {
     public TextField starting_time_input;
     public Button add_button;
     public Label error_label;
+
+    public void add_event(ActionEvent actionEvent) {
+    }
+
+    public void language_to_english(ActionEvent actionEvent) {
+    }
+
+    public void language_to_spanish(ActionEvent actionEvent) {
+    }
+
+    public void language_to_polish(ActionEvent actionEvent) {
+    }
 }
