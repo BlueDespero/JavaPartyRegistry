@@ -15,6 +15,10 @@ public class Launch extends Application {
 
     static Stage mainStage;
 
+    public static Stage getMainStage() {
+        return mainStage;
+    }
+
     @Override
     public void start(Stage stage) throws IOException {
         Locale locale = new Locale("en");
