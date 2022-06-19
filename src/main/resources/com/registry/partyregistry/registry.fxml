@@ -16,71 +16,61 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="538.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.registry.partyregistry.controllers.RegistryController">
-   <children>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="702.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="%menubar.file">
-            <items>
-                  <Menu mnemonicParsing="false" text="%menubar.language">
-                    <items>
-                    <MenuItem mnemonicParsing="false" text="English" />
-                      <MenuItem mnemonicParsing="false" text="Español" />
-                        <MenuItem mnemonicParsing="false" text="Polski" />
-                    </items>
-                  </Menu>
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <TabPane layoutY="27.0" prefHeight="506.0" prefWidth="702.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="%summarytab.tabname">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TreeTableView prefHeight="481.0" prefWidth="702.0">
-                          <columns>
-                            <TreeTableColumn prefWidth="92.0" text="%summarytab.date" />
-                            <TreeTableColumn minWidth="0.0" prefWidth="96.0" text="%summarytab.partyname" />
-                              <TreeTableColumn prefWidth="90.0" text="%summarytab.startingtime" />
-                              <TreeTableColumn prefWidth="111.0" text="%summarytab.category" />
-                              <TreeTableColumn prefWidth="209.0" text="%summarytab.notes" />
-                              <TreeTableColumn prefWidth="103.0" text="%summarytab.budget" />
-                          </columns>
-                        </TreeTableView>
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab fx:id="add_event_tab" text="%addeventtab.tabname">
-            <content>
-              <AnchorPane fx:id="party_name_input" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TextField layoutX="293.0" layoutY="79.0" prefHeight="25.0" prefWidth="206.0" />
-                        <Label fx:id="party_name_label" layoutX="108.0" layoutY="83.0" text="%addeventtab.name" />
-                        <Label fx:id="date_label" layoutX="107.0" layoutY="126.0" prefHeight="25.0" prefWidth="67.0" text="%addeventtab.date" />
-                        <Label fx:id="starting_time_label" layoutX="108.0" layoutY="180.0" text="%addeventtab.starttime" />
-                        <Label fx:id="category_label" layoutX="107.0" layoutY="222.0" text="%addeventtab.category" />
-                        <Label fx:id="budget_label" layoutX="107.0" layoutY="267.0" text="%addeventtab.budget" />
-                        <DatePicker fx:id="event_date_input" layoutX="292.0" layoutY="126.0" prefHeight="25.0" prefWidth="208.0" />
-                        <ChoiceBox fx:id="category_input" layoutX="293.0" layoutY="218.0" prefHeight="25.0" prefWidth="209.0" />
-                        <TextArea fx:id="notes_input" layoutX="292.0" layoutY="306.0" prefHeight="86.0" prefWidth="339.0" />
-                        <TextField fx:id="budget_input" layoutX="292.0" layoutY="263.0" prefHeight="25.0" prefWidth="210.0" />
-                        <TextField fx:id="starting_time_input" layoutX="292.0" layoutY="176.0" prefHeight="25.0" prefWidth="210.0" />
-                        <Button fx:id="add_button" layoutX="278.0" layoutY="438.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" text="%addeventtab.buttontext" />
-                        <Label fx:id="ErrorLabel" layoutX="108.0" layoutY="404.0" prefHeight="25.0" prefWidth="523.0" />
-                        <Label fx:id="note_label" layoutX="107.0" layoutY="306.0" text="addeventtab.note" />
-                        <Label fx:id="add_item_label" alignment="CENTER" contentDisplay="CENTER" layoutX="211.0" layoutY="14.0" prefHeight="46.0" prefWidth="281.0" text="%addeventtab.title" textAlignment="CENTER">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
-   </children>
+<AnchorPane prefHeight="538.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.registry.partyregistry.controllers.RegistryController">
+    <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="702.0">
+        <Menu mnemonicParsing="false" text="%menubar.file">
+            <Menu mnemonicParsing="false" text="%menubar.language">
+                <MenuItem mnemonicParsing="false" text="English"/>
+                <MenuItem mnemonicParsing="false" text="Español"/>
+                <MenuItem mnemonicParsing="false" text="Polski"/>
+            </Menu>
+        </Menu>
+    </MenuBar>
+    <TabPane layoutY="27.0" prefHeight="506.0" prefWidth="702.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab text="%summarytab.tabname">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <TreeTableView prefHeight="481.0" prefWidth="702.0">
+                    <columns>
+                        <TreeTableColumn prefWidth="92.0" text="%summarytab.date"/>
+                        <TreeTableColumn minWidth="0.0" prefWidth="96.0" text="%summarytab.partyname"/>
+                        <TreeTableColumn prefWidth="90.0" text="%summarytab.startingtime"/>
+                        <TreeTableColumn prefWidth="111.0" text="%summarytab.category"/>
+                        <TreeTableColumn prefWidth="209.0" text="%summarytab.notes"/>
+                        <TreeTableColumn prefWidth="103.0" text="%summarytab.budget"/>
+                    </columns>
+                </TreeTableView>
+            </AnchorPane>
+        </Tab>
+        <Tab text="%addeventtab.tabname">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <TextField fx:id="party_name_input" layoutX="293.0" layoutY="79.0" prefHeight="25.0"
+                           prefWidth="206.0"/>
+                <Label layoutX="108.0" layoutY="83.0" text="%addeventtab.name"/>
+                <Label layoutX="107.0" layoutY="126.0" prefHeight="25.0" prefWidth="67.0" text="%addeventtab.date"/>
+                <Label layoutX="108.0" layoutY="180.0" text="%addeventtab.starttime"/>
+                <Label layoutX="107.0" layoutY="222.0" text="%addeventtab.category"/>
+                <Label layoutX="107.0" layoutY="267.0" text="%addeventtab.budget"/>
+                <DatePicker fx:id="event_date_input" layoutX="292.0" layoutY="126.0" prefHeight="25.0"
+                            prefWidth="208.0"/>
+                <ChoiceBox fx:id="category_input" layoutX="293.0" layoutY="218.0" prefHeight="25.0"
+                           prefWidth="209.0"/>
+                <TextArea fx:id="notes_input" layoutX="292.0" layoutY="306.0" prefHeight="86.0" prefWidth="339.0"/>
+                <TextField fx:id="budget_input" layoutX="292.0" layoutY="263.0" prefHeight="25.0"
+                           prefWidth="210.0"/>
+                <TextField fx:id="starting_time_input" layoutX="292.0" layoutY="176.0" prefHeight="25.0"
+                           prefWidth="210.0"/>
+                <Button fx:id="add_button" layoutX="278.0" layoutY="438.0" mnemonicParsing="false" prefHeight="25.0"
+                        prefWidth="146.0" text="%addeventtab.buttontext"/>
+                <Label fx:id="error_label" layoutX="108.0" layoutY="404.0" prefHeight="25.0" prefWidth="523.0"/>
+                <Label layoutX="107.0" layoutY="306.0" text="%addeventtab.note"/>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="211.0" layoutY="14.0" prefHeight="46.0"
+                       prefWidth="281.0" text="%addeventtab.title" textAlignment="CENTER">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+            </AnchorPane>
+        </Tab>
+    </TabPane>
 </AnchorPane>
