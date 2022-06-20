@@ -1,5 +1,6 @@
-package com.registry.partyregistry;
+package com.registry.partyregistry.event;
 
+import com.registry.partyregistry.Launch;
 import org.joda.money.Money;
 import org.joda.time.LocalTime;
 
@@ -64,5 +65,17 @@ public class Event {
 
     public void setBudget(String budget) {
         this.budget = Money.parse(budget);
+    }
+
+    protected Money getBudgetPure() {
+        return budget;
+    }
+
+    protected int getQuarter() {
+        return date.getMonth()/4+1;
+    }
+
+    public Object getYear() {
+        return date.getYear();
     }
 }

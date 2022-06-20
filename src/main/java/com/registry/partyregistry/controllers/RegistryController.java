@@ -1,6 +1,6 @@
 package com.registry.partyregistry.controllers;
 
-import com.registry.partyregistry.Event;
+import com.registry.partyregistry.event.Event;
 import com.registry.partyregistry.Launch;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,8 +9,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
+import org.joda.money.Money;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -43,6 +47,19 @@ public class RegistryController {
     }
 
     public void add_event(ActionEvent actionEvent) {
+        String event_name = party_name_input.getText();
+        String category = (String) category_input.getValue();
+        String note = notes_input.getText();
+        String money_string = Launch.getBundle().getString("currency_id") + " "+ budget_input.toString();
+        Money budget = Money.parse(money_string);
+        DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Launch.getLocale());
+        try {
+            Date date = df.parse(event_date_input.getChronology().toString());
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
     private void change_language(Locale locale)

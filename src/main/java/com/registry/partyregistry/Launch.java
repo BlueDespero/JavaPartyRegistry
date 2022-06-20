@@ -28,6 +28,10 @@ public class Launch extends Application {
         Launch.locale = locale;
     }
 
+    public static ResourceBundle getBundle() {
+        return ResourceBundle.getBundle("com.registry.partyregistry.Bundle", locale);
+    }
+
     @Override
     public void start(Stage stage) throws IOException {
         locale = new Locale("en");
