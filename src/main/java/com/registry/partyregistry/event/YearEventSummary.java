@@ -79,7 +79,7 @@ public class YearEventSummary extends Event {
     }
 
     @Override
-    public void setCategory(String category) {
+    public void setCategory(Integer category) {
         super.setCategory(category);
     }
 

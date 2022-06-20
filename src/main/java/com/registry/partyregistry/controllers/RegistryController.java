@@ -88,7 +88,7 @@ public class RegistryController {
 
     public void add_event(ActionEvent actionEvent) {
         String event_name = party_name_input.getText();
-        String category = (String) category_input.getValue();
+        Integer category = category_input.getItems().indexOf(category_input.getValue());;
         String note = notes_input.getText();
         String money_string = Launch.getBundle().getString("app.currency_id") + " " + budget_input.getText();
         Money budget = Money.parse(money_string);

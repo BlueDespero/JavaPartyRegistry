@@ -54,7 +54,7 @@ public class QuarterEventSummary extends Event {
     }
 
     @Override
-    public void setCategory(String category) {
+    public void setCategory(Integer category) {
         super.setCategory(category);
     }
 

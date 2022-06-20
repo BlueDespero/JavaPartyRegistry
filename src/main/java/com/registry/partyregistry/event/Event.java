@@ -17,13 +17,13 @@ public class Event {
     private Date date;
     private String name;
     private LocalTime starting_time;
-    private String category;
+    private Integer category;
     private String notes;
     private Money budget;
 
     private Locale initial_internationalization;
 
-    public Event(Date date, String name, LocalTime starting_time, String category, String notes, Money budget, Locale initial_internationalization) {
+    public Event(Date date, String name, LocalTime starting_time, Integer category, String notes, Money budget, Locale initial_internationalization) {
         this.date = date;
         this.name = name;
         this.starting_time = starting_time;
@@ -65,10 +65,10 @@ public class Event {
     }
 
     public String getCategory() {
-        return category;
+        return Launch.getBundle().getString("app.categories").split(" ")[this.category];
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Integer category) {
         this.category = category;
     }
 
