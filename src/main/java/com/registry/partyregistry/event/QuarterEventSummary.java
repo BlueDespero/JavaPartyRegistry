@@ -73,7 +73,9 @@ public class QuarterEventSummary extends Event {
         Money quarter_budget = Money.parse(Launch.getBundle().getString("app.currency_id") + " 0");
         for (Event e :
                 events_in_quarter) {
-            quarter_budget = quarter_budget.plus(e.getBudgetPure());
+            System.out.println("Before"+e.getBudget());
+            quarter_budget = quarter_budget.plus(Money.parse(e.getBudget()));
+            System.out.println("After"+ quarter_budget);
         }
         return quarter_budget.toString();
     }

@@ -20,7 +20,7 @@
     <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="702.0">
         <Menu mnemonicParsing="false" text="%menubar.file">
             <Menu mnemonicParsing="false" text="%menubar.language">
-                <MenuItem mnemonicParsing="false" onAction="#language_to_english" text="English" />
+                <MenuItem mnemonicParsing="false" onAction="#language_to_english" text="English(US)" />
                 <MenuItem mnemonicParsing="false" onAction="#language_to_spanish" text="Español" />
                 <MenuItem mnemonicParsing="false" onAction="#language_to_polish" text="Polski" />
             </Menu>

@@ -97,7 +97,8 @@ public class RegistryController {
         Date date = Date.from(instant);
 
         LocalTime starting_time = LocalTime.parse(starting_time_input.getText(), DateTimeFormat.forPattern(Launch.getBundle().getString("app.hour_format")));
-        EventRegistry.getEvent_list().add(new Event(date, event_name, starting_time, category, note, budget));
+        String current_locale = Launch.getLocale().getLanguage();
+        EventRegistry.getEvent_list().add(new Event(date, event_name, starting_time, category, note, budget, new Locale(current_locale)));
 
         this.refresh_summary();
     }
@@ -143,11 +144,12 @@ public class RegistryController {
         Launch.getMainStage().hide();
         Launch.getMainStage().setTitle(bundle.getString("app.title"));
         Launch.getMainStage().setScene(scene);
-        Launch.getMainStage().show();
         Launch.setLocale(locale);
 
         this.internationalize_datapicker();
         this.refresh_summary();
+
+        Launch.getMainStage().show();
     }
 
     public void language_to_english(ActionEvent actionEvent) {

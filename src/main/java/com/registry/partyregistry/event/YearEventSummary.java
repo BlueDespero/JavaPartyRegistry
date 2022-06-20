@@ -98,7 +98,9 @@ public class YearEventSummary extends Event {
         Money year_budget = Money.parse(Launch.getBundle().getString("app.currency_id") + " 0");
         for (QuarterEventSummary e :
                 quarters_in_year) {
+            System.out.println("Before"+e.getBudget());
             year_budget = year_budget.plus(Money.parse(e.getBudget()));
+            System.out.println("After"+ year_budget);
         }
         return year_budget.toString();
     }
