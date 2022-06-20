@@ -56,6 +56,7 @@ public class RegistryController {
         }
 
         this.internationalize_datapicker();
+        this.refresh_summary();
     }
 
     private void internationalize_datapicker() {
@@ -96,7 +97,8 @@ public class RegistryController {
         Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
         Date date = Date.from(instant);
 
-        LocalTime starting_time = LocalTime.parse(starting_time_input.getText(), DateTimeFormat.forPattern(Launch.getBundle().getString("app.hour_format")));
+        String hour_format = Launch.getBundle().getString("app.hour_format");
+        LocalTime starting_time = LocalTime.parse(starting_time_input.getText(), DateTimeFormat.forPattern(hour_format));
         String current_locale = Launch.getLocale().getLanguage();
         EventRegistry.getEvent_list().add(new Event(date, event_name, starting_time, category, note, budget, new Locale(current_locale)));
 
@@ -129,9 +131,11 @@ public class RegistryController {
         }
 
         tree_table.setRoot(root);
+        tree_table.refresh();
     }
 
     private void change_language(Locale locale) {
+        Launch.setLocale(locale);
         ResourceBundle bundle = ResourceBundle.getBundle("com.registry.partyregistry.Bundle", locale);
         Parent root = null;
         try {
@@ -144,7 +148,6 @@ public class RegistryController {
         Launch.getMainStage().hide();
         Launch.getMainStage().setTitle(bundle.getString("app.title"));
         Launch.getMainStage().setScene(scene);
-        Launch.setLocale(locale);
 
         this.internationalize_datapicker();
         this.refresh_summary();

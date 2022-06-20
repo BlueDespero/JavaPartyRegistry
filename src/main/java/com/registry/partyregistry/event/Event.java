@@ -7,8 +7,6 @@ import org.joda.time.LocalTime;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -59,7 +57,7 @@ public class Event {
     }
 
     public String getStarting_time() {
-        return starting_time.toString("HH:mm", Launch.getLocale());
+        return starting_time.toString(Launch.getBundle().getString("app.hour_format"), Launch.getLocale());
     }
 
     public void setStarting_time(String starting_time) {
