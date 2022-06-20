@@ -1,11 +1,14 @@
 package com.registry.partyregistry.controllers;
 
+import com.registry.partyregistry.Event;
 import com.registry.partyregistry.Launch;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -21,6 +24,23 @@ public class RegistryController {
     public TextField starting_time_input;
     public Button add_button;
     public Label error_label;
+    public TreeTableView<Event> tree_table;
+    public TreeTableColumn<Event, String> date_column;
+    public TreeTableColumn<Event, String> party_name_column;
+    public TreeTableColumn<Event, String> starting_time_column;
+    public TreeTableColumn<Event, String> category_column;
+    public TreeTableColumn<Event, String> notes_column;
+    public TreeTableColumn<Event, String> budget_column;
+
+    @FXML
+    public void initialize() {
+        date_column.setCellValueFactory(new TreeItemPropertyValueFactory<>("date"));
+        party_name_column.setCellValueFactory(new TreeItemPropertyValueFactory<>("name"));
+        starting_time_column.setCellValueFactory(new TreeItemPropertyValueFactory<>("starting_time"));
+        category_column.setCellValueFactory(new TreeItemPropertyValueFactory<>("category"));
+        notes_column.setCellValueFactory(new TreeItemPropertyValueFactory<>("notes"));
+        budget_column.setCellValueFactory(new TreeItemPropertyValueFactory<>("budget"));
+    }
 
     public void add_event(ActionEvent actionEvent) {
     }
@@ -40,6 +60,7 @@ public class RegistryController {
         Launch.getMainStage().setTitle(bundle.getString("app.title"));
         Launch.getMainStage().setScene(scene);
         Launch.getMainStage().show();
+        Launch.setLocale(locale);
     }
 
     public void language_to_english(ActionEvent actionEvent) {

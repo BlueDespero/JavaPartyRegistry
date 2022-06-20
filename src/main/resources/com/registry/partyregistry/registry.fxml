@@ -29,14 +29,14 @@
     <TabPane layoutY="27.0" prefHeight="506.0" prefWidth="702.0" tabClosingPolicy="UNAVAILABLE">
         <Tab text="%summarytab.tabname">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                <TreeTableView prefHeight="481.0" prefWidth="702.0">
+                <TreeTableView fx:id="tree_table" prefHeight="481.0" prefWidth="702.0">
                     <columns>
-                        <TreeTableColumn prefWidth="92.0" text="%summarytab.date" />
-                        <TreeTableColumn minWidth="0.0" prefWidth="96.0" text="%summarytab.partyname" />
-                        <TreeTableColumn prefWidth="90.0" text="%summarytab.startingtime" />
-                        <TreeTableColumn prefWidth="111.0" text="%summarytab.category" />
-                        <TreeTableColumn prefWidth="209.0" text="%summarytab.notes" />
-                        <TreeTableColumn prefWidth="103.0" text="%summarytab.budget" />
+                        <TreeTableColumn fx:id="date_column" prefWidth="92.0" text="%summarytab.date" />
+                        <TreeTableColumn fx:id="party_name_column" minWidth="0.0" prefWidth="96.0" text="%summarytab.partyname" />
+                        <TreeTableColumn fx:id="starting_time_column" prefWidth="90.0" text="%summarytab.startingtime" />
+                        <TreeTableColumn fx:id="category_column" prefWidth="111.0" text="%summarytab.category" />
+                        <TreeTableColumn fx:id="notes_column" prefWidth="209.0" text="%summarytab.notes" />
+                        <TreeTableColumn fx:id="budget_column" prefWidth="103.0" text="%summarytab.budget" />
                     </columns>
                 </TreeTableView>
             </AnchorPane>

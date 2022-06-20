@@ -14,14 +14,23 @@ import java.util.ResourceBundle;
 public class Launch extends Application {
 
     static Stage mainStage;
+    static Locale locale;
 
     public static Stage getMainStage() {
         return mainStage;
     }
 
+    public static Locale getLocale() {
+        return locale;
+    }
+
+    public static void setLocale(Locale locale) {
+        Launch.locale = locale;
+    }
+
     @Override
     public void start(Stage stage) throws IOException {
-        Locale locale = new Locale("en");
+        locale = new Locale("en");
         ResourceBundle bundle = ResourceBundle.getBundle("com.registry.partyregistry.Bundle", locale);
         Parent root = FXMLLoader.load(Objects.requireNonNull(Launch.class.getResource("registry.fxml")), bundle);
 
