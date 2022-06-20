@@ -8,10 +8,11 @@ import java.util.Date;
 
 public class YearEventSummary extends Event {
 
-    private ArrayList<QuarterEventSummary> quarters_in_year;
-    private int year;
+    private final ArrayList<QuarterEventSummary> quarters_in_year;
+    private final int year;
 
     public YearEventSummary(int year, ArrayList<Event> events_in_year) {
+        super();
         this.year = year;
         quarters_in_year = new ArrayList<>();
 
@@ -84,7 +85,7 @@ public class YearEventSummary extends Event {
 
     @Override
     public String getNotes() {
-        return "Summary for the year  " + String.valueOf(year);
+        return String.format(Launch.getBundle().getString("summarytab.yearcomment"), this.year);
     }
 
     @Override
@@ -94,10 +95,10 @@ public class YearEventSummary extends Event {
 
     @Override
     public String getBudget() {
-        Money year_budget = Money.parse(Launch.getBundle().getString("currency_id") + " 0");
+        Money year_budget = Money.parse(Launch.getBundle().getString("app.currency_id") + " 0");
         for (QuarterEventSummary e :
                 quarters_in_year) {
-            year_budget.plus(Money.parse(e.getBudget()));
+            year_budget = year_budget.plus(Money.parse(e.getBudget()));
         }
         return year_budget.toString();
     }
@@ -107,4 +108,7 @@ public class YearEventSummary extends Event {
         super.setBudget(budget);
     }
 
+    public ArrayList<QuarterEventSummary> getQuarters_in_year() {
+        return quarters_in_year;
+    }
 }

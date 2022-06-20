@@ -8,11 +8,11 @@ import java.util.stream.Collectors;
 public class EventRegistry {
     static ArrayList<Event> event_list = new ArrayList<>();
 
-    public void add_event() {
-
+    public static ArrayList<Event> getEvent_list() {
+        return event_list;
     }
 
-    public ArrayList<YearEventSummary> prepare_registry(){
+    public static ArrayList<YearEventSummary> prepare_registry(){
         ArrayList<YearEventSummary> years_list = new ArrayList<>();
 
         Map<Object, List<Event>> eventsGrouped =

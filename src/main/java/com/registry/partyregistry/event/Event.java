@@ -5,6 +5,7 @@ import org.joda.money.Money;
 import org.joda.time.LocalTime;
 
 import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Event {
@@ -15,8 +16,18 @@ public class Event {
     private String notes;
     private Money budget;
 
-    private String locale_id;
+    public Event(Date date, String name, LocalTime starting_time, String category, String notes, Money budget){
+        this.date = date;
+        this.name = name;
+        this.starting_time = starting_time;
+        this.category = category;
+        this.notes = notes;
+        this.budget = budget;
+    }
 
+    public Event() {
+
+    }
 
     public String getDate() {
         DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Launch.getLocale());
@@ -72,10 +83,15 @@ public class Event {
     }
 
     protected int getQuarter() {
-        return date.getMonth()/4+1;
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        int month = cal.get(Calendar.MONTH);
+        return month/4+1;
     }
 
     public Object getYear() {
-        return date.getYear();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        return cal.get(Calendar.YEAR);
     }
 }
