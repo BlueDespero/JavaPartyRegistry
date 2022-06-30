@@ -29,7 +29,7 @@ public class Launch extends Application {
     }
 
     public static ResourceBundle getBundle() {
-        return ResourceBundle.getBundle("com.registry.partyregistry.Bundle", locale);
+        return ResourceBundle.getBundle("com.registry.partyregistry.Bundle", Launch.getLocale());
     }
 
     @Override
