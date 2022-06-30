@@ -137,7 +137,7 @@ public class RegistryController {
     private void change_language(Locale locale) {
         Launch.setLocale(locale);
         ResourceBundle bundle = ResourceBundle.getBundle("com.registry.partyregistry.Bundle", locale);
-        Parent root = null;
+        Parent root;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(Launch.class.getResource("registry.fxml")), bundle);
         } catch (IOException e) {
